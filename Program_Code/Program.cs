@@ -12,6 +12,12 @@ while (true)
     if (inputString=="~exit") break;
     firstArray=AddElement(firstArray,inputString);
 }
+for (int i=0;i<firstArray.Length;i++)
+{
+    if (firstArray[i].Length<=3) secondArray=AddElement(secondArray,firstArray[i]);
+}
+Console.WriteLine ("Array with elements length less than 3 or equal to 3:");
+for (int i=0;i<secondArray.Length;i++) Console.WriteLine(secondArray[i]);
 string [] AddElement (string [] oldArray, string newElement)    //функция добавления нового элемента в массив
 {
     string [] newArray=new string [oldArray.Length+1];
@@ -19,10 +25,3 @@ string [] AddElement (string [] oldArray, string newElement)    //функция
     newArray[oldArray.Length]=newElement;
     return newArray;
 }
-for (int i=0;i<firstArray.Length;i++)
-{
-    if (firstArray[i].Length<=3) secondArray=AddElement(secondArray,firstArray[i]);
-}
-
-Console.WriteLine ("Array with elements length less than 3 or equal to 3:");
-for (int i=0;i<secondArray.Length;i++) Console.WriteLine(secondArray[i]);
